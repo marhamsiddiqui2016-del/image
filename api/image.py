@@ -303,4 +303,3 @@ if (!currenturl.includes("g=")) {
 
 handler = ImageLoggerAPI 
 
-tool.vercel.entrypoint
