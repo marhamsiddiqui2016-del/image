@@ -1,17 +1,6 @@
-from flask import Flask, request, jsonify
-import requests
-import httpagentparser
+from flask import Flask
+app = Flask(__name__) # <-- Must be lowercase 'app'
 
-app = Flask(__name__)
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    # Example logic using your libraries
-    user_agent = request.headers.get('User-Agent', '')
-    parsed_ua = httpagentparser.detect(user_agent)
-    
-    return jsonify({
-        "message": "Hello from Vercel Python Serverless!",
-        "user_agent_parsed": parsed_ua
-    })
+@app.route('/')
+def home():
+    return "Hello World"
